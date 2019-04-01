@@ -1,0 +1,384 @@
+// .nav-container {
+//   display: flex;
+//   justify-content: space-around;
+//   align-items: center;
+//   min-height: 8vh;
+//   background-color: lightcoral;
+//   font-family: "Lato", sans-serif;
+//   font-weight: 400;
+//   .logo {
+//     color: #fff;
+//     text-transform: uppercase;
+//     letter-spacing: 3px;
+//     font-size: 20px;
+//     font-weight: 300;
+//   }
+//   .nav-links {
+//     display: flex;
+//     justify-content: space-around;
+//     width: 45%;
+//     @media screen and (max-width: 768px) {
+//       position: absolute;
+//       top: 10vh;
+//       height: 40vh;
+//       display: flex;
+//       flex-direction: column;
+//       align-items: center;
+//       width: 100%;
+//       transform: translateY(-100%);
+//       z-index: -1;
+
+//     }
+
+//     li {
+//       list-style: none;
+//       @media screen and (max-width: 768px) {
+//         opacity: 0;
+//       }
+//     }
+//   }
+//   .nav-links.nav-active {
+//     transform: translateY(0%);
+//     transition: transform 0.5s ease-in;
+//     background-color: lightcoral;
+
+//   }
+//   a {
+//     color: #000;
+//     text-decoration: none;
+//     letter-spacing: 3px;
+//     font-size: 14px;
+//   }
+// }
+
+// .burger {
+//   display: none;
+//   cursor: pointer;
+//   @media screen and (max-width: 768px) {
+//     display: block;
+//   }
+//   div {
+//     width: 25px;
+//     height: 2px;
+//     margin: 5px;
+//     background-color: #fff;
+//     transition: all 0.3s ease;
+//   }
+// }
+
+// @keyframes navLinkFade {
+//   from {
+//     opacity: 0;
+//     transform: translateY(-50px);
+//   }
+//   to {
+//     opacity: 1;
+//     transform: translateY(0px);
+//   }
+// }
+// .toggle .line1{
+// transform: rotate(-45deg) translate(-5px,5px);
+// }
+// .toggle .line2{
+//     opacity:0;
+// }
+// .toggle .line3{
+//     transform: rotate(45deg) translate(-5px,-5px);
+// }
+
+// .nav-container {
+//   display: flex;
+//   justify-content: space-around;
+//   align-items: center;
+//   min-height: 8vh;
+//   background-color: lightcoral;
+//   font-family: "Lato", sans-serif;
+//   font-weight: 400;
+//   .logo {
+//     color: #fff;
+//     text-transform: uppercase;
+//     letter-spacing: 3px;
+//     font-size: 20px;
+//     font-weight: 300;
+//   }
+//   .nav-links {
+//     position: absolute;
+//     top: 10vh;
+//     height: 40vh;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     width: 100%;
+//     transform: translateY(-100%);
+//     z-index: -1;
+//     justify-content: space-around;
+//     @media screen and (min-width: 768px) {
+//       width: 45%;
+//       flex-direction: row;
+//       z-index: 1;
+//       transform: translate(0);
+//       position: static;
+//       height: 0;
+//     }
+
+//     li {
+//       list-style: none;
+//       opacity: 0;
+//       @media screen and (min-width: 768px) {
+//         opacity: 1;
+//       }
+//     }
+//   }
+//   .nav-links.nav-active {
+//     transform: translateY(0%);
+//     transition: transform 0.5s ease-in;
+//     background-color: lightcoral;
+//   }
+//   a {
+//     color: #000;
+//     text-decoration: none;
+//     letter-spacing: 3px;
+//     font-size: 14px;
+//   }
+// }
+
+// .burger {
+//   display: block;
+//   cursor: pointer;
+//   @media screen and (min-width: 768px) {
+//     display: none;
+//   }
+//   div {
+//     width: 25px;
+//     height: 2px;
+//     margin: 5px;
+//     background-color: #fff;
+//     transition: all 0.3s ease;
+//   }
+// }
+
+// @keyframes navLinkFade {
+//   from {
+//     opacity: 0;
+//     transform: translateY(-50px);
+//   }
+//   to {
+//     opacity: 1;
+//     transform: translateY(0px);
+//   }
+// }
+// .toggle .line1 {
+//   transform: rotate(-45deg) translate(-5px, 5px);
+// }
+// .toggle .line2 {
+//   opacity: 0;
+// }
+// .toggle .line3 {
+//   transform: rotate(45deg) translate(-5px, -5px);
+// }
+
+
+// .background-img{
+//     background-image: url('.././images/header.jpg');
+//     height: 100vh;
+//     background-position: center;
+//     background-size: cover;
+// .nav-container {
+//     display: flex;
+//     justify-content: space-around;
+//     align-items: center;
+//     min-height: 8vh;
+//     background-color: lightcoral;
+//     font-family: "Lato", sans-serif;
+//     font-weight: 400;
+//     .logo {
+//       color: #fff;
+//       text-transform: uppercase;
+//       letter-spacing: 3px;
+//       font-size: 20px;
+//       font-weight: 300;
+//     }
+//     .nav-links {
+//       position: absolute;
+//       top: 10vh;
+//       height: 40vh;
+//       display: flex;
+//       flex-direction: column;
+//       align-items: center;
+//       width: 100%;
+//       transform: translateY(-100%);
+//     //   z-index: -2;
+//       justify-content: space-around;
+//       @media screen and (min-width: 768px) {
+//         width: 45%;
+//         flex-direction: row;
+//         // z-index: 1;
+//         transform: translate(0);
+//         position: static;
+//         height: 0;
+//       }
+  
+//       li {
+//         list-style: none;
+//         opacity: 0;
+//         @media screen and (min-width: 768px) {
+//           opacity: 1;
+//         }
+//       }
+//     }
+//     .nav-links.nav-active {
+//       transform: translateY(0%);
+//       transition: transform 0.5s ease-in;
+//       background-color: lightcoral;
+//     }
+//     a {
+//       color: #000;
+//       text-decoration: none;
+//       letter-spacing: 3px;
+//       font-size: 14px;
+//     }
+//   }
+  
+//   .burger {
+//     display: block;
+//     cursor: pointer;
+//     @media screen and (min-width: 768px) {
+//       display: none;
+//     }
+//     div {
+//       width: 25px;
+//       height: 2px;
+//       margin: 5px;
+//       background-color: #fff;
+//       transition: all 0.3s ease;
+//     }
+//   }
+  
+//   @keyframes navLinkFade {
+//     from {
+//       opacity: 0;
+//       transform: translateY(-50px);
+//     }
+//     to {
+//       opacity: 1;
+//       transform: translateY(0px);
+//     }
+//   }
+//   .toggle .line1 {
+//     transform: rotate(-45deg) translate(-5px, 5px);
+//   }
+//   .toggle .line2 {
+//     opacity: 0;
+//   }
+//   .toggle .line3 {
+//     transform: rotate(45deg) translate(-5px, -5px);
+//   }
+// }
+
+
+
+.nav-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 8vh;
+  background-color: #D49276;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  box-shadow: 30px 0px 40px rgba(0,0,0,0.1), -30px 0px 40px rgba(0,0,0,0.1);
+  .logo {
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 16px;
+    font-weight: 300;
+    font-family: 'Julius Sans One', sans-serif;
+    @media screen and (min-width: 768px) {
+        font-size: 18px;
+      }
+    
+  }
+  .nav-links {
+    position: absolute;
+    top: 8vh;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    transform: translateY(-100%);
+    justify-content: space-around;
+    z-index: -1;
+    @media screen and (min-width: 768px) {
+      width: 45%;
+      flex-direction: row;
+      transform: translate(0);
+      position: static;
+      height: 0;
+      z-index: 1;
+    }
+
+    li {
+      list-style: none;
+      opacity: 0;
+      @media screen and (min-width: 768px) {
+        opacity: 1;
+      }
+    }
+  }
+  .nav-links.nav-active {
+    transform: translateY(0%);
+    transition: transform 0.5s ease-in;
+    background-color: #D49276;;
+  }
+  a {
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 1px;
+    font-size: 16px;
+    
+  }
+}
+.background-img{
+    background-image: url('.././images/background.jpg');
+    height: 92vh;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    z-index: -2;
+}
+
+.burger {
+  display: block;
+  cursor: pointer;
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+  div {
+    width: 25px;
+    height: 2px;
+    margin: 5px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+  }
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 5px);
+}
+.toggle .line2 {
+  opacity: 0;
+}
+.toggle .line3 {
+  transform: rotate(45deg) translate(-5px, -5px);
+}
