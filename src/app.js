@@ -1,14 +1,14 @@
 import "./styles/main.scss";
 
 const navSlide = () => {
-  const burger = document.querySelector(".burger");
-  const nav = document.querySelector(".nav-links");
-  const navLinks = document.querySelectorAll(".nav-links li");
+  const burger = document.querySelector(".nav__burger");
+  const nav = document.querySelector(".nav__items");
+  const navLinks = document.querySelectorAll(".nav__item");
 
   
   burger.addEventListener("click", () => {
   // Toggle nav
-    nav.classList.toggle("nav-active");
+    nav.classList.toggle("nav__active");
   
   // Animate links
     navLinks.forEach((link, index) => {
@@ -23,3 +23,16 @@ const navSlide = () => {
   });
 };
 navSlide();
+
+// Text appear on scroll
+const scrollAppear=()=>{
+const aboutContentContainer=document.querySelector('.about__content-container');
+let introPosition=aboutContentContainer.getBoundingClientRect().top;
+let screenPosition=window.innerHeight/2.2;
+
+if(introPosition<screenPosition){
+  aboutContentContainer.classList.add("about__content-appear");
+}
+}
+
+window.addEventListener('scroll',scrollAppear);

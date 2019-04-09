@@ -15,33 +15,71 @@
     />
   </head>
   <body>
-    <nav class="nav-container">
-      <div class="logo">
+    <!-- Nav and header -->
+    <nav class="nav">
+      <div class="nav__logo">
         <h4>-OneDesigne Studio-</h4>
       </div>
-      <ul class="nav-links">
-        <li><a href="#">About</a></li>
-        <li><a href="#">Offer</a></li>
-        <li><a href="#">Portfolio</a></li>
-        <li><a href="#">Contact</a></li>
+      <ul class="nav__items">
+        <li class="nav__item"><a class="nav__link" href="#">About</a></li>
+        <li class="nav__item"><a class="nav__link" href="#">Offer</a></li>
+        <li class="nav__item"><a class="nav__link" href="#">Portfolio</a></li>
+        <li class="nav__item"><a class="nav__link" href="#">Contact</a></li>
       </ul>
-      <div class="burger">
-        <div class="line1"></div>
-        <div class="line2"></div>
-        <div class="line3"></div>
+      <div class="nav__burger">
+        <div class="nav__line nav__line--upper"></div>
+        <div class="nav__line nav__line--middle"></div>
+        <div class="nav__line nav__line--bottom"></div>
       </div>
     </nav>
-    <header class="header-background">
-      <div class="header-content">
-        <div class="header-text">
-          <h1>Creating is our passion</h1>
-          <h2>Let us designe furniture of your dreams</h2>
+
+    <header class="header">
+      <div class="header__content">
+        <div class="header__text">
+          <h1 class="header__caption">Creating is our passion</h1>
+          <h2 class="header__caption header__caption--smaller">
+            Let us designe furniture of your dreams
+          </h2>
         </div>
-        <div class="header-button">
-          <button>Contact us</button>
+        <div class="header__button-container">
+          <button class="header__button">Contact us</button>
         </div>
       </div>
     </header>
+
+    <!-- About -->
+    <div class="about">
+      <div class="about__image-container">
+        <div class="about__image-background"></div>
+
+        <div class="about__image" alt="workplace">
+          <img src="./image/desk.jpg" alt="workplace" />
+        </div>
+      </div>
+
+      <div class="about__content-container">
+        <h1 class="about__caption">Who are we?</h1>
+        <hr class="about__line" />
+        <p class="about__text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur.
+        </p>
+        <p class="about__text">
+          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+          accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae
+          ab illo inventore veritatis et quasi architecto beatae vitae dicta
+          sunt explicabo.
+        </p>
+          
+        
+      </div>
+    </div>
+
+
     <script src="main.js"></script>
   </body>
 </html>
