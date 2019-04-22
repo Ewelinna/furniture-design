@@ -89,16 +89,13 @@
   }
 }
 .header {
-  background-image: url(".././images/background-mobile.jpg");
+  background-image: url("../img/background.jpg");
   height: 92vh;
   background-position: center;
   background-size: cover;
   position: relative;
   display: flex;
   justify-content: center;
-  @media screen and (min-width: 769px) {
-    background-image: url(".././images/background-deskt.jpg");
-  }
   &__content {
     display: flex;
     flex-direction: column;
