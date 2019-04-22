@@ -1,25 +1,23 @@
-.nav-container {
+.nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
   min-height: 8vh;
-  background-color: $themeColor-Pink;
-  font-family: "Lato", sans-serif;
+  background-color: $pinkColor;
   font-weight: 400;
   box-shadow: 30px 0px 40px rgba(0, 0, 0, 0.1),
     -30px 0px 40px rgba(0, 0, 0, 0.1);
-  .logo {
-    color: #fff;
+  &__logo {
+    color: $whiteColor;
     text-transform: uppercase;
     letter-spacing: 1px;
-    font-size: 16px;
-    font-weight: 300;
+    font-size: 1rem;
     font-family: "Julius Sans One", sans-serif;
-    @media screen and (min-width: 768px) {
-      font-size: 18px;
+    @media screen and (min-width: 769px) {
+      font-size: 1.1rem;
     }
   }
-  .nav-links {
+  &__items {
     position: absolute;
     top: 8vh;
     height: 41vh;
@@ -30,119 +28,126 @@
     transform: translateY(-100%);
     justify-content: space-around;
     z-index: 2;
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 769px) {
       width: 45%;
       flex-direction: row;
       transform: translate(0);
       position: static;
       height: 0;
     }
-    li {
+    .nav__item {
       list-style: none;
       opacity: 0;
-      @media screen and (min-width: 768px) {
+      @media screen and (min-width: 769px) {
         opacity: 1;
+      }
+      .nav__link {
+        color: $whiteColor;
+        text-decoration: none;
+        letter-spacing: 1px;
+        font-size: 1rem;
+      }
+      .nav__link::after {
+        @media screen and (min-width: 769px) {
+          content: "";
+          display: block;
+          width: 0;
+          height: 2px;
+          background: $whiteColor;
+          transition: width 0.3s;
+          margin-top: 5px;
+        }
+      }
+      .nav__link:hover::after {
+        @media screen and (min-width: 769px) {
+          width: 100%;
+          transition: width 0.5s;
+        }
       }
     }
   }
-  .nav-links.nav-active {
+  .nav__items.nav__active {
     transform: translateY(0%);
     transition: transform 0.5s ease-in;
-    background-color: $themeColor-Pink;
+    background-color: $pinkColor;
   }
-  a {
-    color: #fff;
-    text-decoration: none;
-    letter-spacing: 1px;
-    font-size: 16px;
+
+  &__burger {
+    display: block;
+    cursor: pointer;
+    z-index: 3;
+    @media screen and (min-width: 769px) {
+      display: none;
+    }
+    .nav__line {
+      width: 25px;
+      height: 2px;
+      margin: 5px;
+      background-color: $whiteColor;
+      transition: all 0.3s ease;
+    }
   }
 }
-.header-background {
-  background-image: url(".././images/background-mobile.jpg");
+.header {
+  background-image: url("../img/background.jpg");
   height: 92vh;
   background-position: center;
   background-size: cover;
   position: relative;
   display: flex;
   justify-content: center;
-  @media screen and (min-width: 768px) {
-    background-image: url(".././images/background-deskt.jpg");
-  }
-  .header-content {
+  &__content {
     display: flex;
     flex-direction: column;
     margin-top: 110px;
-
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 769px) {
       margin-top: 70px;
     }
-    .header-text {
+    .header__text {
       text-align: center;
-      color: $themeColor-Grey;
+      color: $greyColor;
       display: flex;
       flex-direction: column;
-      h1 {
-        font-size: 1.8rem;
-        font-family: "Lato", sans-serif;
+      .header__caption {
+        font-size: $fontSizeHeadingMobile;
         font-weight: 300;
         margin-bottom: 10px;
-        @media screen and (min-width: 768px) {
-          font-size: 2.5rem;
+        align-self: center;
+        @media screen and (min-width: 769px) {
+          font-size: $fontSizeHeadingDeskt;
         }
       }
-      h2 {
+      .header__caption--smaller {
         font-size: 1.1rem;
-        font-family: "Lato", sans-serif;
-        font-weight: 300;
         width: 80%;
-        align-self: center;
-        @media screen and (min-width: 768px) {
+        @media screen and (min-width: 769px) {
           font-size: 1.2rem;
         }
       }
     }
-    .header-button {
+    .header__button-container {
       text-align: center;
 
-      button {
+      .header__button {
         margin-top: 30px;
-        padding: 14px;
-        border: solid $themeColor-Grey 1px;
+        padding: 18px;
+        border: solid $pinkColor 1px;
         background-color: #ededf0;
-        font-family: "Lato", sans-serif;
         font-size: 0.8rem;
-        color: $themeColor-Grey;
-        @media screen and (min-width: 768px) {
+        color: $pinkColor;
+        @media screen and (min-width: 769px) {
           padding: 22px;
           font-size: 1.1rem;
           margin-top: 50px;
         }
         &:hover {
-          // background-color: #7D7D7D;
-          // background-color: #6e7168;
-          background-color: $themeColor-Grey;
-          color: #fff;
+          background-color: $pinkColor;
+          color: $whiteColor;
           transition: 0.5s;
           cursor: pointer;
         }
       }
     }
-  }
-}
-
-.burger {
-  display: block;
-  cursor: pointer;
-  z-index: 3;
-  @media screen and (min-width: 768px) {
-    display: none;
-  }
-  div {
-    width: 25px;
-    height: 2px;
-    margin: 5px;
-    background-color: #fff;
-    transition: all 0.3s ease;
   }
 }
 
@@ -156,12 +161,12 @@
     transform: translateY(0px);
   }
 }
-.toggle .line1 {
+.toggle .nav__line--upper {
   transform: rotate(-45deg) translate(-5px, 5px);
 }
-.toggle .line2 {
+.toggle .nav__line--middle {
   opacity: 0;
 }
-.toggle .line3 {
+.toggle .nav__line--bottom {
   transform: rotate(45deg) translate(-5px, -5px);
 }
