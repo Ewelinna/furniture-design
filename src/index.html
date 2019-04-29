@@ -21,10 +21,18 @@
         <h4>-OneDesigne Studio-</h4>
       </div>
       <ul class="nav__items" id="nav-items">
-        <li class="nav__item" id="nav-item"><a class="nav__link" href="#">About</a></li>
-        <li class="nav__item" id="nav-item"><a class="nav__link" href="#">Offer</a></li>
-        <li class="nav__item" id="nav-item"><a class="nav__link" href="#">Portfolio</a></li>
-        <li class="nav__item" id="nav-item"><a class="nav__link" href="#">Contact</a></li>
+        <li class="nav__item" id="nav-item">
+          <a class="nav__link" href="#">About</a>
+        </li>
+        <li class="nav__item" id="nav-item">
+          <a class="nav__link" href="#">Offer</a>
+        </li>
+        <li class="nav__item" id="nav-item">
+          <a class="nav__link" href="#">Portfolio</a>
+        </li>
+        <li class="nav__item" id="nav-item">
+          <a class="nav__link" href="#">Contact</a>
+        </li>
       </ul>
       <div class="nav__burger" id="burger">
         <div class="nav__line nav__line--upper"></div>
@@ -52,8 +60,8 @@
       <div class="about__image-container">
         <div class="about__image-background"></div>
 
-        <div class="about__image" alt="workplace">
-          <img src="./img/desk.jpg" alt="workplace" />
+        <div class="about__image-wrapper" alt="workplace">
+          <img class="about__image" src="./img/desk.jpg" alt="workplace" />
         </div>
       </div>
 
@@ -76,6 +84,21 @@
         </p>
       </div>
     </section>
-    
+    <section class="portfolio">
+      <div class="portfolio__caption-container">
+        <p class="portfolio__caption">Our work</p>
+      </div>
+
+      <div class="portfolio__container">
+          <div class="portfolio__img-container portfolio__img-container--fade"><img class="portfolio__img" src="/img/designe.jpg" /></div>
+          <div class="portfolio__img-container portfolio__img-container--fade"><img class="portfolio__img" src="/img/wooden.jpg"/></div>
+          <div class="portfolio__img-container portfolio__img-container--fade"><img class="portfolio__img" src="/img/black-chair.jpg"/></div>
+          <div class="portfolio__img-container portfolio__img-container--fade"><img class="portfolio__img" src="/img/yellow.jpg"/></div>
+          <div class="portfolio__img-container portfolio__img-container--fade portfolio__img-container--horizontal"><img class="portfolio__img" src="/img/chair-desk.jpg"/></div>
+          <div class="portfolio__img-container portfolio__img-container--fade portfolio__img-container--vertical"><img class="portfolio__img" src="/img/night.jpg"/></div>
+          <div class="portfolio__img-container portfolio__img-container--fade"><img class="portfolio__img" src="/img/plant.jpg"/></div>
+          <div class="portfolio__img-container portfolio__img-container--fade"><img class="portfolio__img" src="/img/black.jpg"/></div>
+        </div>
+    </section>
   </body>
 </html>

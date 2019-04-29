@@ -1,0 +1,74 @@
+.portfolio {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &__caption-container {
+    flex-basis: 100%;
+    text-align: center;
+    .portfolio__caption {
+      padding: 50px;
+      font-size: $fontSizeHeadingMobile;
+      color: $pinkColor;
+      @media screen and (min-width: 769px) {
+        font-size: $fontSizeHeadingDeskt;
+        padding: 30px;
+      }
+    }
+  }
+  &__container {
+    width: 90%;
+    align-self: center;
+    height: auto;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 15px;
+    @media screen and (min-width: 769px) {
+      width: 80%;
+      grid-template-columns: repeat(3, 1fr);
+      grid-auto-rows: minmax(220px, auto);
+    }
+    .portfolio__img-container{
+      position: relative;
+    }
+    .portfolio__img {
+      width: 100%;
+      height: 100%;
+    }
+    .portfolio__img-container--horizontal {
+      @media screen and (min-width: 769px){
+      grid-column: 2/4;
+      grid-row: 2/4;
+    }}
+    .portfolio__img-container--vertical {
+      @media screen and (min-width: 769px){
+      grid-column: 1/2;
+      grid-row: 3/5;
+    }}
+    .portfolio__img-container--fade::after{
+      @media screen and (min-width: 769px){
+        content:'View';
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: $fontSizeMainDeskt;
+        background: black;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top:0;
+        left: 0;
+        opacity:0;
+        transition: opacity 0.5s ease;
+        cursor: pointer;
+
+      }
+    }
+    .portfolio__img-container--fade:hover::after{
+      opacity: 0.6;
+    }
+
+  }
+}
