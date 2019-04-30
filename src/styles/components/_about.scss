@@ -8,21 +8,23 @@
   &__image-container {
     display: none;
     @media screen and (min-width: 769px) {
+      flex-basis: 50%;
       margin: 5vh;
       display: grid;
       width: calc(90vh * 0.75);
-      height: calc(90vh);
+      height: 90vh;
+      grid-template-columns: repeat(6, 1fr);
 
       .about__image-background {
         background-color: $lightGreyColor;
-        grid-column: 1 / span 10;
-        grid-row: 4 / span 8;
+        grid-column: 1 / 6;
+        grid-row: 1 / 4;
       }
-      .about__image {
-        grid-column: 2 / span 8;
-        grid-row: 1 / span 10;
+      .about__image-wrapper {
+        grid-column: 2 / 5;
+        grid-row: 2 / 4;
 
-        img {
+        .about__image {
           max-width: 100%;
           max-height: 100%;
         }
@@ -30,7 +32,6 @@
     }
   }
   &__content-container {
-    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -39,7 +40,7 @@
     transform: translateY(50px);
     transition: 1s all ease-in-out;
     @media screen and (min-width: 769px) {
-      width: 50%;
+      flex-basis: 50%;
     }
     .about__caption {
       color: $pinkColor;
