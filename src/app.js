@@ -34,7 +34,30 @@ const scrollAppear = () => {
 
   if (introPosition < screenPosition) {
     aboutContentContainer.classList.add("about__content-appear");
-  }9
+  }
 };
 
 window.addEventListener("scroll", scrollAppear);
+
+// Image preview
+
+const overlay = document.querySelector("#overlay");
+const overlayImage = overlay.querySelector(".portfolio__bigger-img");
+const overlayClose = overlay.querySelector(".portfolio__close");
+
+const ImageGalleryController = ImageGalleryController || {};
+
+ImageGalleryController.openImage =(e)=>{
+  const src = e.currentTarget.querySelector(".portfolio__img").src;
+  overlayImage.src = src;
+  overlay.classList.add("open");
+}
+ImageGalleryController.closeImage =()=>{
+  overlay.classList.remove("open");
+}
+
+const images = document.querySelectorAll(".portfolio__img-container");
+
+images.forEach(image => image.addEventListener("click", ImageGalleryController.openImage));
+overlayClose.addEventListener("click", ImageGalleryController.closeImage);
+
