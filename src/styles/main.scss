@@ -1,9 +1,11 @@
 @import '../../node_modules/normalize.css/normalize';
 @import 'theme';
+@import 'mixins';
 @import 'reset';
 @import './components/header';
 @import './components/about';
 @import './components/portfolio';
+
 
 
 

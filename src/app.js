@@ -24,20 +24,18 @@ const navSlide = () => {
 };
 navSlide();
 
-// Text appear on scroll
-const scrollAppear = () => {
-  const aboutContentContainer = document.querySelector(
-    ".about__content-container"
-  );
-  let introPosition = aboutContentContainer.getBoundingClientRect().top;
-  let screenPosition = window.innerHeight / 2.2;
+// Text appears on scroll
+const scrollAboutAppear = () => {
+  const aboutContent = document.querySelector(".about__content-container");
+  const aboutContentPosition = aboutContent.getBoundingClientRect().top;
+  const aboutScreenPosition = window.innerHeight / 2.2;
 
-  if (introPosition < screenPosition) {
-    aboutContentContainer.classList.add("about__content-appear");
+  if (aboutContentPosition < aboutScreenPosition) {
+    aboutContent.classList.add("about__content-appear");
   }
 };
 
-window.addEventListener("scroll", scrollAppear);
+window.addEventListener("scroll", scrollAboutAppear);
 
 // Image preview
 
@@ -47,17 +45,34 @@ const overlayClose = overlay.querySelector(".portfolio__close");
 
 const ImageGalleryController = ImageGalleryController || {};
 
-ImageGalleryController.openImage =(e)=>{
+ImageGalleryController.openImage = e => {
   const src = e.currentTarget.querySelector(".portfolio__img").src;
   overlayImage.src = src;
   overlay.classList.add("open");
-}
-ImageGalleryController.closeImage =()=>{
+};
+ImageGalleryController.closeImage = () => {
   overlay.classList.remove("open");
-}
+};
 
 const images = document.querySelectorAll(".portfolio__img-container");
 
-images.forEach(image => image.addEventListener("click", ImageGalleryController.openImage));
+images.forEach(image =>
+  image.addEventListener("click", ImageGalleryController.openImage)
+);
 overlayClose.addEventListener("click", ImageGalleryController.closeImage);
 
+// Images appear on scroll
+
+const scrollPortfolioAppear = () => {
+  const portfolioImages = document.querySelectorAll(
+    ".portfolio__img-container"
+  );
+  const portfolioScreenPosition = window.innerHeight / 1.2;
+
+  portfolioImages.forEach(portfolioImage => {
+    if (portfolioImage.getBoundingClientRect().top < portfolioScreenPosition) {
+      portfolioImage.classList.add("portfolio__img-container--reveal");
+    }
+  });
+};
+window.addEventListener("scroll", scrollPortfolioAppear);
