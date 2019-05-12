@@ -24,19 +24,6 @@ const navSlide = () => {
 };
 navSlide();
 
-// Text appears on scroll
-const scrollAboutAppear = () => {
-  const aboutContent = document.querySelector(".about__content-container");
-  const aboutContentPosition = aboutContent.getBoundingClientRect().top;
-  const aboutScreenPosition = window.innerHeight / 2.2;
-
-  if (aboutContentPosition < aboutScreenPosition) {
-    aboutContent.classList.add("about__content-appear");
-  }
-};
-
-window.addEventListener("scroll", scrollAboutAppear);
-
 // Image preview
 
 const overlay = document.querySelector("#overlay");
@@ -61,18 +48,35 @@ images.forEach(image =>
 );
 overlayClose.addEventListener("click", ImageGalleryController.closeImage);
 
-// Images appear on scroll
+// Elements reveal on scroll
 
-const scrollPortfolioAppear = () => {
+const revealOnScroll = (
+  elementToReveal,
+  innerHeightPosition,
+  elementToRevealNewClass
+) => {
+  const contentPosition = elementToReveal.getBoundingClientRect().top;
+  const screenPosition = window.innerHeight / innerHeightPosition;
+  if (contentPosition < screenPosition) {
+    elementToReveal.classList.add(elementToRevealNewClass);
+  }
+};
+
+const revealAboutOnScroll = () => {
+  const aboutContent = document.querySelector(".about__content-container");
+
+  revealOnScroll(aboutContent, 2.2, "about__content-appear");
+};
+
+window.addEventListener("scroll", revealAboutOnScroll);
+
+const revealPortfolioOnScroll = () => {
   const portfolioImages = document.querySelectorAll(
     ".portfolio__img-container"
   );
-  const portfolioScreenPosition = window.innerHeight / 1.2;
 
   portfolioImages.forEach(portfolioImage => {
-    if (portfolioImage.getBoundingClientRect().top < portfolioScreenPosition) {
-      portfolioImage.classList.add("portfolio__img-container--reveal");
-    }
+    revealOnScroll(portfolioImage, 1.2, "portfolio__img-container--reveal");
   });
 };
-window.addEventListener("scroll", scrollPortfolioAppear);
+window.addEventListener("scroll", revealPortfolioOnScroll);
