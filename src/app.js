@@ -24,21 +24,6 @@ const navSlide = () => {
 };
 navSlide();
 
-// Text appear on scroll
-const scrollAppear = () => {
-  const aboutContentContainer = document.querySelector(
-    ".about__content-container"
-  );
-  let introPosition = aboutContentContainer.getBoundingClientRect().top;
-  let screenPosition = window.innerHeight / 2.2;
-
-  if (introPosition < screenPosition) {
-    aboutContentContainer.classList.add("about__content-appear");
-  }
-};
-
-window.addEventListener("scroll", scrollAppear);
-
 // Image preview
 
 const overlay = document.querySelector("#overlay");
@@ -47,17 +32,51 @@ const overlayClose = overlay.querySelector(".portfolio__close");
 
 const ImageGalleryController = ImageGalleryController || {};
 
-ImageGalleryController.openImage =(e)=>{
+ImageGalleryController.openImage = e => {
   const src = e.currentTarget.querySelector(".portfolio__img").src;
   overlayImage.src = src;
   overlay.classList.add("open");
-}
-ImageGalleryController.closeImage =()=>{
+};
+ImageGalleryController.closeImage = () => {
   overlay.classList.remove("open");
-}
+};
 
 const images = document.querySelectorAll(".portfolio__img-container");
 
-images.forEach(image => image.addEventListener("click", ImageGalleryController.openImage));
+images.forEach(image =>
+  image.addEventListener("click", ImageGalleryController.openImage)
+);
 overlayClose.addEventListener("click", ImageGalleryController.closeImage);
 
+// Elements reveal on scroll
+
+const revealOnScroll = (
+  elementToReveal,
+  innerHeightPosition,
+  elementToRevealNewClass
+) => {
+  const contentPosition = elementToReveal.getBoundingClientRect().top;
+  const screenPosition = window.innerHeight / innerHeightPosition;
+  if (contentPosition < screenPosition) {
+    elementToReveal.classList.add(elementToRevealNewClass);
+  }
+};
+
+const revealAboutOnScroll = () => {
+  const aboutContent = document.querySelector(".about__content-container");
+
+  revealOnScroll(aboutContent, 2.2, "about__content-appear");
+};
+
+window.addEventListener("scroll", revealAboutOnScroll);
+
+const revealPortfolioOnScroll = () => {
+  const portfolioImages = document.querySelectorAll(
+    ".portfolio__img-container"
+  );
+
+  portfolioImages.forEach(portfolioImage => {
+    revealOnScroll(portfolioImage, 1.2, "portfolio__img-container--reveal");
+  });
+};
+window.addEventListener("scroll", revealPortfolioOnScroll);
