@@ -63,7 +63,7 @@ const revealOnScroll = (
 };
 
 const revealAboutOnScroll = () => {
-  const aboutContent = document.querySelector(".about__content-container");
+  const aboutContent = document.querySelector(".about__container");
 
   revealOnScroll(aboutContent, 2.2, "about__content-appear");
 };
